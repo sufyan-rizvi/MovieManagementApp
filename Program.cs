@@ -6,6 +6,7 @@ namespace MovieManagementApp
 {
     internal class Program
     {
+        public static List<Movie> movies = new List<Movie>();
         static Movie findMovie;
         static void Main(string[] args)
         {
@@ -40,14 +41,14 @@ namespace MovieManagementApp
             {
                 case 1:
 
-                    if (Movie.movies.Count >= Movie.MAX_MOVIES)
+                    if (movies.Count >= Movie.MAX_MOVIES)
                         Console.WriteLine("Maximum limit of movies reached in list !");
                     else
                         AddMovie();
                     break;
 
                 case 2:
-                    if(Movie.movies.Count == 0)
+                    if (movies.Count == 0)
                         Console.WriteLine("No Movies in list, add a Movie first !");
                     else
                         DisplayAllMovies();
@@ -72,14 +73,14 @@ namespace MovieManagementApp
                         Console.WriteLine("No movie found");
                     else
                     {
-                        Movie.movies.Remove(findMovie);
+                        movies.Remove(findMovie);
                         Console.WriteLine("Movie removed successfully !");
                     }
                     break;
 
                 case 5:
 
-                    Movie.movies.Clear();
+                    movies.Clear();
                     Console.WriteLine("Movie List Cleared");
                     break;
 
@@ -98,21 +99,21 @@ namespace MovieManagementApp
 
             static Movie FindMovieByID()
             {
-                
+
                 Console.Write("Enter the movie Id: ");
                 int id = Convert.ToInt32(Console.ReadLine());
 
-                findMovie = Movie.movies.Where(movie => movie.Id == id).FirstOrDefault();
+                findMovie = movies.Where(movie => movie.Id == id).FirstOrDefault();
 
                 return findMovie;
 
             }
             static void DisplayAllMovies()
             {
-                if (Movie.movies.Count == 0)
+                if (movies.Count == 0)
                     Console.WriteLine("No movies to display !");
                 else
-                    Movie.movies.ForEach(movie => Console.WriteLine(movie));
+                    movies.ForEach(movie => Console.WriteLine(movie));
             }
             static void AddMovie()
             {
@@ -129,9 +130,10 @@ namespace MovieManagementApp
                 string genre = Console.ReadLine();
 
 
-                Movie.movies.Add(new Movie { Id = id, Name = name, YearOfRelease = year, Genre = genre });
+                movies.Add(new Movie { Id = id, Name = name, YearOfRelease = year, Genre = genre });
             }
 
 
         }
     }
+}

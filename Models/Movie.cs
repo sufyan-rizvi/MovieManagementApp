@@ -9,7 +9,7 @@ namespace MovieManagementApp.Models
     internal class Movie
     {
          
-        public static List<Movie> movies = new List<Movie>();
+        
         public int Id { get; set; }
 
         public static int MAX_MOVIES { get; } = 5;
