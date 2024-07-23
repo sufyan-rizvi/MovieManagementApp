@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieManagementApp.Models
+namespace MovieStoreManagementApp.Models
 {
     internal class Movie
     {
