@@ -11,9 +11,6 @@ namespace MovieStoreManagementApp.Models
          
         
         public int Id { get; set; }
-
-        public static int MAX_MOVIES { get; } = 5;
-
         public string Name { get; set; }
         public int YearOfRelease { get; set; }
         public string Genre {  get; set; }

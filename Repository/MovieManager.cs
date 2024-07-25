@@ -11,6 +11,7 @@ namespace MovieStoreManagementApp.Repository
 {
     internal class MovieManager
     {
+        public static int MAX_MOVIES { get; } = 5;
         public static List<Movie> movies = new List<Movie>();
         static Movie findMovie;
 
@@ -56,6 +57,16 @@ namespace MovieStoreManagementApp.Repository
         public static void SerializeMovie()
         {
             DataSerializer.Serialize(movies);
+        }
+
+        public static int MaxMovies()
+        {
+            return MAX_MOVIES;
+        }
+
+        public static int MovieCount()
+        {
+            return movies.Count;
         }
     }
 }

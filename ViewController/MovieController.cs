@@ -87,7 +87,7 @@ namespace MovieStoreManagementApp.ViewController
 
         static void Add()
         {
-            if (MovieManager.movies.Count >= Movie.MAX_MOVIES)//Ask maam
+            if (MovieManager.MovieCount >= MovieManager.MaxMovies())//Ask 
                 throw new CapacityFullException("The movie store is full ! Cannot add new Movies !");
 
             Console.WriteLine("Enter Movie Id: ");
